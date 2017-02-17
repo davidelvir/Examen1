@@ -1359,14 +1359,113 @@ public class Frame_Examen extends javax.swing.JFrame {
                 numeros.clear();
                 op++;
             }
-            
-            
+            String id_boleto="";
+            for(Integer t : boleto){
+                id_boleto += t;
+            }
+            ((persona)cb_venta.getSelectedItem()).setId_boleto(id_boleto);
         }else if(rb_5.isSelected()){
-            
+            Random r = new Random();
+            int [][] pascal = new int [6][6];
+            int c = 1;
+            int op = 0;
+            ArrayList<Integer>numeros = new ArrayList();
+            ArrayList<Integer>boleto = new ArrayList();
+            while(op < 5){
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 10; j++) {
+                        if(j==0||i==j){
+                            pascal[i][j] = c;
+                        }else if(j>i){
+                            pascal[i][j]=0;
+                        }
+                        else {
+                           pascal[i][j] = pascal[i-1][j-1]+pascal[i-1][j]; 
+                        }
+                        if(pascal[i][j]>1){
+                            numeros.add(pascal[i][j]);
+                        }
+                    }
+                }
+                boleto.add(numeros.get(0+r.nextInt(numeros.size()-1)));
+                c = boleto.get(boleto.size()-1);
+                
+                numeros.clear();
+                op++;
+            }
+            String id_boleto="";
+            for(Integer t : boleto){
+                id_boleto += t;
+            }
+            ((persona)cb_venta.getSelectedItem()).setId_boleto(id_boleto);
         }else if(rb_6.isSelected()){
-            
+            Random r = new Random();
+            int [][] pascal = new int [6][6];
+            int c = 1;
+            int op = 0;
+            ArrayList<Integer>numeros = new ArrayList();
+            ArrayList<Integer>boleto = new ArrayList();
+            while(op < 7){
+                for (int i = 0; i < 14; i++) {
+                    for (int j = 0; j < 14; j++) {
+                        if(j==0||i==j){
+                            pascal[i][j] = c;
+                        }else if(j>i){
+                            pascal[i][j]=0;
+                        }
+                        else {
+                           pascal[i][j] = pascal[i-1][j-1]+pascal[i-1][j]; 
+                        }
+                        if(pascal[i][j]>1){
+                            numeros.add(pascal[i][j]);
+                        }
+                    }
+                }
+                boleto.add(numeros.get(0+r.nextInt(numeros.size()-1)));
+                c = boleto.get(boleto.size()-1);
+                
+                numeros.clear();
+                op++;
+            }
+            String id_boleto="";
+            for(Integer t : boleto){
+                id_boleto += t;
+            }
+            ((persona)cb_venta.getSelectedItem()).setId_boleto(id_boleto);
         }else if(rb_7.isSelected()){
-            
+            Random r = new Random();
+            int [][] pascal = new int [6][6];
+            int c = 1;
+            int op = 0;
+            ArrayList<Integer>numeros = new ArrayList();
+            ArrayList<Integer>boleto = new ArrayList();
+            while(op < 7){
+                for (int i = 0; i < 14; i++) {
+                    for (int j = 0; j < 14; j++) {
+                        if(j==0||i==j){
+                            pascal[i][j] = c;
+                        }else if(j>i){
+                            pascal[i][j]=0;
+                        }
+                        else {
+                           pascal[i][j] = pascal[i-1][j-1]+pascal[i-1][j]; 
+                        }
+                        if(pascal[i][j]>1){
+                            numeros.add(pascal[i][j]);
+                        }
+                    }
+                }
+                boleto.add(numeros.get(0+r.nextInt(numeros.size()-1)));
+                c = boleto.get(boleto.size()-1);
+                
+                numeros.clear();
+                op++;
+            }
+            String id_boleto="";
+            for(Integer t : boleto){
+                id_boleto += t;
+            }
+            ((persona)cb_venta.getSelectedItem()).setId_boleto(id_boleto);
         }
     }//GEN-LAST:event_jButton2MouseClicked
 

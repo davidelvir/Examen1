@@ -12,6 +12,10 @@ package examen1;
 public class nasrralah {
     private String contraseña;
 
+    public nasrralah(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
     public String getContraseña() {
         return contraseña;
     }
