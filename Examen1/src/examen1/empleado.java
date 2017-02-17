@@ -33,7 +33,7 @@ public class empleado extends persona{
 
     @Override
     public String toString() {
-        return "empleado{" + "empleo=" + empleo + '}';
+        return super.getNombre();
     }
     
 }

@@ -6,8 +6,10 @@
 package examen1;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,6 +36,7 @@ public class Frame_Examen extends javax.swing.JFrame {
         bt_ocupacion = new javax.swing.ButtonGroup();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        bg_premio = new javax.swing.ButtonGroup();
         jTabbedPane9 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane10 = new javax.swing.JTabbedPane();
@@ -142,6 +145,13 @@ public class Frame_Examen extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        cb_venta = new javax.swing.JComboBox<>();
+        rb_3 = new javax.swing.JRadioButton();
+        rb_5 = new javax.swing.JRadioButton();
+        rb_6 = new javax.swing.JRadioButton();
+        rb_7 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -152,6 +162,12 @@ public class Frame_Examen extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane9.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane9StateChanged(evt);
+            }
+        });
 
         jTabbedPane10.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -231,15 +247,15 @@ public class Frame_Examen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(tf_edad_est, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                    .addComponent(tf_edad_est, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(tf_id_est, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                    .addComponent(tf_id_est, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(tf_dep_est, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                    .addComponent(tf_dep_est, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,7 +378,7 @@ public class Frame_Examen extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -481,7 +497,7 @@ public class Frame_Examen extends javax.swing.JFrame {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -736,7 +752,7 @@ public class Frame_Examen extends javax.swing.JFrame {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel14Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -867,7 +883,7 @@ public class Frame_Examen extends javax.swing.JFrame {
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 331, Short.MAX_VALUE)
             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel16Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -899,6 +915,11 @@ public class Frame_Examen extends javax.swing.JFrame {
         });
 
         cb_eliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_eliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -918,7 +939,7 @@ public class Frame_Examen extends javax.swing.JFrame {
                 .addComponent(cb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         jTabbedPane10.addTab("Eliminar", jPanel6);
@@ -955,7 +976,7 @@ public class Frame_Examen extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         jTabbedPane10.addTab("Reportes", jPanel7);
@@ -973,18 +994,74 @@ public class Frame_Examen extends javax.swing.JFrame {
 
         jTabbedPane9.addTab("Administracion", jPanel1);
 
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel39.setText("Cliente:");
+
+        cb_venta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        bg_premio.add(rb_3);
+        rb_3.setText("350");
+
+        bg_premio.add(rb_5);
+        rb_5.setText("10,000");
+
+        bg_premio.add(rb_6);
+        rb_6.setText("100,000");
+
+        bg_premio.add(rb_7);
+        rb_7.setText("1,000,000");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setText("Vender");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 581, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cb_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(33, 33, 33)
+                            .addComponent(rb_3)
+                            .addGap(18, 18, 18)
+                            .addComponent(rb_5)
+                            .addGap(18, 18, 18)
+                            .addComponent(rb_6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(rb_7))))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rb_3)
+                    .addComponent(rb_5)
+                    .addComponent(rb_6)
+                    .addComponent(rb_7))
+                .addGap(52, 52, 52)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
 
-        jTabbedPane9.addTab("tab2", jPanel2);
+        jTabbedPane9.addTab("Compra", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -997,7 +1074,7 @@ public class Frame_Examen extends javax.swing.JFrame {
             .addGap(0, 391, Short.MAX_VALUE)
         );
 
-        jTabbedPane9.addTab("tab3", jPanel3);
+        jTabbedPane9.addTab("Rifa", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1092,6 +1169,11 @@ public class Frame_Examen extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Contraseña equivocada. Persona no agregada");
         }
+        tf_nombre_politico.setText("");
+        tf_edad_politico.setText("");
+        tf_id_politico.setText("");
+        tf_dep_politico.setText("");
+        tf_dinero_politico.setText("");
     }//GEN-LAST:event_jb_politicoMouseClicked
 
     private void tf_id_est1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_id_est1ActionPerformed
@@ -1099,11 +1181,6 @@ public class Frame_Examen extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_id_est1ActionPerformed
 
     private void jb_estudiante1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_estudiante1MouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jb_estudiante1MouseClicked
-
-    private void tf_id_empleado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_id_empleado1ActionPerformed
         // TODO add your handling code here:
         String c = JOptionPane.showInputDialog(this, "Ingrese la contraseña");
         if(c.equals(contraseña)){
@@ -1117,6 +1194,17 @@ public class Frame_Examen extends javax.swing.JFrame {
         }else{
             JOptionPane.showInputDialog(this, "Contraseña equivocada. Modificaciones no guardadas");
         }
+        tf_nom_est1.setText("");
+        tf_edad_est1.setText("");
+        tf_id_est1.setText("");
+        tf_dep_est1.setText("");
+        tf_dinero_est1.setText("");
+        tf_carrera1.setText("");
+    }//GEN-LAST:event_jb_estudiante1MouseClicked
+
+    private void tf_id_empleado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_id_empleado1ActionPerformed
+        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tf_id_empleado1ActionPerformed
 
     private void jb_empleado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_empleado1MouseClicked
@@ -1133,6 +1221,12 @@ public class Frame_Examen extends javax.swing.JFrame {
         }else{
             JOptionPane.showInputDialog(this, "Contraseña equivocada. Modificaciones no guardadas");
         }
+        tf_nombre_empleado1.setText("");
+        tf_edad_empleado1.setText("");
+        tf_id_empleado1.setText("");
+        tf_dep_empleado1.setText("");
+        tf_dinero_empleado1.setText("");
+        tf_empleo1.setText("");
     }//GEN-LAST:event_jb_empleado1MouseClicked
 
     private void tf_id_politico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_id_politico1ActionPerformed
@@ -1153,10 +1247,38 @@ public class Frame_Examen extends javax.swing.JFrame {
         }else{
             JOptionPane.showInputDialog(this, "Contraseña equivocada. Modificaciones no guardadas");
         }
+        tf_nombre_politico1.setText("");
+        tf_edad_politico1.setText("");
+        tf_id_politico1.setText("");
+        tf_dep_politico1.setText("");
+        tf_dinero_politico1.setText("");
     }//GEN-LAST:event_jb_politico1MouseClicked
 
     private void jTabbedPane10StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane10StateChanged
         // TODO add your handling code here:
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Codigo", "Nombre", "Edad", "Fecha"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+        }); 
+        if(jTabbedPane10.getSelectedIndex()==3){
+            for (persona tem : lista) {
+                DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
+                Object[] newrow = {tem.getNombre(),tem.getId(),tem.getId_boleto(),tem.getDinero()};
+                modelo.addRow(newrow);
+                jTable1.setModel(modelo);
+            }
+            
+        }
         if(jTabbedPane10.getSelectedIndex()==1){
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
@@ -1177,6 +1299,7 @@ public class Frame_Examen extends javax.swing.JFrame {
             cb_politico.setModel(modelo2);
             cb_eliminar.setModel(modelo3);
         }
+        
     }//GEN-LAST:event_jTabbedPane10StateChanged
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -1188,6 +1311,57 @@ public class Frame_Examen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Contraseña equivocada. Persona no agregada");
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jTabbedPane9StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane9StateChanged
+        // TODO add your handling code here:
+        if(jTabbedPane9.getSelectedIndex()==1){
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for(persona temp : lista){
+                modelo.addElement(temp);
+            }
+            cb_venta.setModel(modelo);
+        }
+        
+    }//GEN-LAST:event_jTabbedPane9StateChanged
+
+    private void cb_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_eliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_eliminarActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        if(rb_3.isSelected()){
+            Random r = new Random();
+            int [][] pascal = new int [6][6];
+            int c = 1;
+            int op = 0;
+            ArrayList<Integer>numeros = new ArrayList();
+            ArrayList<Integer>boleto = new ArrayList();
+            while(op < 3){
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 6; j++) {
+                        if(j==0||i==j){
+                            pascal[i][j] = c;
+                        }else {
+                           pascal[i][j] = pascal[i-1][j-1]+pascal[i][j-1]; 
+                        }
+                        if(pascal[i][j]!=1){
+                            numeros.add(pascal[i][j]);
+                        }
+                    }
+                }
+                boleto.add(numeros.get(0+r.nextInt(numeros.size()-1)));
+                c = boleto.get(boleto.size()-1);
+            }
+            
+        }else if(rb_5.isSelected()){
+            
+        }else if(rb_6.isSelected()){
+            
+        }else if(rb_7.isSelected()){
+            
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1228,6 +1402,7 @@ public class Frame_Examen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bg_premio;
     private javax.swing.ButtonGroup bt_ocupacion;
     private javax.swing.JComboBox<String> cb_eliminar;
     private javax.swing.JComboBox<String> cb_empleado;
@@ -1235,7 +1410,9 @@ public class Frame_Examen extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_partido;
     private javax.swing.JComboBox<String> cb_partido1;
     private javax.swing.JComboBox<String> cb_politico;
+    private javax.swing.JComboBox<String> cb_venta;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1269,6 +1446,7 @@ public class Frame_Examen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel388;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1304,6 +1482,10 @@ public class Frame_Examen extends javax.swing.JFrame {
     private javax.swing.JButton jb_estudiante1;
     private javax.swing.JButton jb_politico;
     private javax.swing.JButton jb_politico1;
+    private javax.swing.JRadioButton rb_3;
+    private javax.swing.JRadioButton rb_5;
+    private javax.swing.JRadioButton rb_6;
+    private javax.swing.JRadioButton rb_7;
     private javax.swing.JTextField tf_carrera;
     private javax.swing.JTextField tf_carrera1;
     private javax.swing.JTextField tf_dep_empleado;
@@ -1342,5 +1524,10 @@ public class Frame_Examen extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tp_agregar1;
     // End of variables declaration//GEN-END:variables
     ArrayList<persona>lista = new ArrayList();
+    ArrayList<persona>rifa1 = new ArrayList();
+    ArrayList<persona>rifa2 = new ArrayList();
+    ArrayList<persona>rifa3 = new ArrayList();
+    ArrayList<persona>rifa4 = new ArrayList();
     static String contraseña;
+    ArrayList<persona>ganadores = new ArrayList();
 }

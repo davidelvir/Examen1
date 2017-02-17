@@ -33,7 +33,7 @@ public class estudiante extends persona{
 
     @Override
     public String toString() {
-        return "estudiante{" + "carrera=" + carrera + '}';
+        return super.getNombre();
     }
     
 }

@@ -33,7 +33,7 @@ public class politico extends persona{
 
     @Override
     public String toString() {
-        return "politico{" + "partido=" + partido + '}';
+        return super.getNombre();
     }
     
 }
