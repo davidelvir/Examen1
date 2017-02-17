@@ -16,10 +16,12 @@ public class empleado extends persona{
         super();
     }
 
-    public empleado(String empleo, String nombre, int edad, String id, int dept, int dinero) {
-        super(nombre, edad, id, dept, dinero);
+    public empleado(String empleo, String nombre, int edad, String id, String id_boleto, String dept, int dinero) {
+        super(nombre, edad, id, id_boleto, dept, dinero);
         this.empleo = empleo;
     }
+
+    
 
     public String getEmpleo() {
         return empleo;

@@ -13,18 +13,28 @@ public class persona {
     private String nombre;
     private int edad;
     private String id;
-    private int dept;
+    private String id_boleto;
+    private String dept;
     private int dinero;
 
     public persona() {
     }
 
-    public persona(String nombre, int edad, String id, int dept, int dinero) {
+    public persona(String nombre, int edad, String id, String id_boleto,String dept, int dinero) {
         this.nombre = nombre;
         this.edad = edad;
         this.id = id;
         this.dept = dept;
         this.dinero = dinero;
+        this.id_boleto = id_boleto;
+    }
+
+    public String getId_boleto() {
+        return id_boleto;
+    }
+
+    public void setId_boleto(String id_boleto) {
+        this.id_boleto = id_boleto;
     }
 
     public String getNombre() {
@@ -51,11 +61,11 @@ public class persona {
         this.id = id;
     }
 
-    public int getDept() {
+    public String getDept() {
         return dept;
     }
 
-    public void setDept(int dept) {
+    public void setDept(String dept) {
         this.dept = dept;
     }
 

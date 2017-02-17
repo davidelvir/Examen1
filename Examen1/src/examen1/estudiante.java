@@ -12,10 +12,12 @@ package examen1;
 public class estudiante extends persona{
     private String carrera;
 
-    public estudiante(String carrera, String nombre, int edad, String id, int dept, int dinero) {
-        super(nombre, edad, id, dept, dinero);
+    public estudiante(String carrera, String nombre, int edad, String id, String id_boleto, String dept, int dinero) {
+        super(nombre, edad, id, id_boleto, dept, dinero);
         this.carrera = carrera;
     }
+
+    
 
     public estudiante() {
         super();

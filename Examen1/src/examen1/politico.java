@@ -16,10 +16,12 @@ public class politico extends persona{
         super();
     }
 
-    public politico(String partido, String nombre, int edad, String id, int dept, int dinero) {
-        super(nombre, edad, id, dept, dinero);
+    public politico(String partido, String nombre, int edad, String id, String id_boleto, String dept, int dinero) {
+        super(nombre, edad, id, id_boleto, dept, dinero);
         this.partido = partido;
     }
+
+    
 
     public String getPartido() {
         return partido;
