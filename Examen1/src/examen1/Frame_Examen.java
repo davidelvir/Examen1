@@ -1342,17 +1342,24 @@ public class Frame_Examen extends javax.swing.JFrame {
                     for (int j = 0; j < 6; j++) {
                         if(j==0||i==j){
                             pascal[i][j] = c;
-                        }else {
-                           pascal[i][j] = pascal[i-1][j-1]+pascal[i][j-1]; 
+                        }else if(j>i){
+                            pascal[i][j]=0;
                         }
-                        if(pascal[i][j]!=1){
+                        else {
+                           pascal[i][j] = pascal[i-1][j-1]+pascal[i-1][j]; 
+                        }
+                        if(pascal[i][j]>1){
                             numeros.add(pascal[i][j]);
                         }
                     }
                 }
                 boleto.add(numeros.get(0+r.nextInt(numeros.size()-1)));
                 c = boleto.get(boleto.size()-1);
+                
+                numeros.clear();
+                op++;
             }
+            
             
         }else if(rb_5.isSelected()){
             
